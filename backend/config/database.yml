@@ -27,6 +27,12 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
    <<: *default
-   database: Hello_production
-   username: Hello
-   password: <%= ENV["FRIENDLIST_DATABASE_PASSWORD"] %>
+   url: <%= ENV['DATABASE_URL'] %>
+   database: <%= ENV['POSTGRES_DATABASE'] %>
+   username: <%= ENV['POSTGRES_USER'] %>
+   password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+# Action Cable configuration
+cable:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'todo_cable') %>
