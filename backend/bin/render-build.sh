@@ -3,6 +3,9 @@
 # Exit on error
 set -o errexit
 
+# Make Rails binary files executable
+chmod +x bin/rails
+
 bundle install
 bin/rails assets:precompile
 bin/rails assets:clean
