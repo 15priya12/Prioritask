@@ -8,7 +8,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres #username you provided when installing postgresql. By default its postgres(if you did not provide any)
+  username: postgres
   password: Birth15!day!
 
 development:
@@ -44,3 +44,28 @@ queue:
   database: <%= ENV['POSTGRES_DATABASE'] %>
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+# Cache configuration for Solid Cache
+cache:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['POSTGRES_DATABASE'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+  # Primary configuration (if needed for multiple database support)
+primary:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['POSTGRES_DATABASE'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+# Primary replica configuration (if needed for read replicas)
+primary_replica:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['POSTGRES_DATABASE'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  replica: true
