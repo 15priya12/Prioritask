@@ -15,15 +15,15 @@ const Todo = ({id ,todo_name,completed, deleteTodo}) =>{
         <div>
             <div className="todo">
                 <div className="todo-container">
-                    <input checked={isChecked} onClick={handleComplete} type="checkbox"></input>
-                    <h3>{todo_name}</h3>
-                    <RiDeleteBin3Fill onClick ={handleDelete} size='20px' />
+                    <div className="todo-content">
+                        <input checked={isChecked} onChange={handleComplete} type="checkbox" />
+                        <h3>{todo_name}</h3>
+                    </div>
+                    <RiDeleteBin3Fill onClick={handleDelete} size='20px' />
                 </div>
             </div>
-
         </div>
     )
 }
-
 
 export default Todo;

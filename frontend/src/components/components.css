@@ -1,0 +1,48 @@
+.add-todo {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.add-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.add-input:focus {
+  border-color: #39393a;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.add-input::placeholder {
+  color: #9ca3af;
+}
+
+.add-button {
+  font-size: 28px;
+  color: #39393a;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.add-button:hover {
+  color: #1f1f20;
+  transform: scale(1.1);
+}
+
+.add-button:active {
+  transform: scale(0.95);
+} 
