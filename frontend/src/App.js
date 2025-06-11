@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-      <h1 className='title'>Todo App</h1>
+      <h1 className='title'>PriorTask</h1>
       <AddTodo addTodo={addTodo}/>
        <TodoList todos={todos} deleteTodo = {deleteTodo}/>
       </div>
