@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://127.0.0.1:3000/api/'
+const BASE_URL = 'https://prioritask-1h7j.onrender.com'
 const GET_URL = `${BASE_URL}todos`
 const POST_URL = `${BASE_URL}todos`
 const DELETE_URL = (id) => `${BASE_URL}todos/${id}`
